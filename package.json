@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "@untemps/svelte-palette": "1.4.2"
+    "@untemps/svelte-palette": "^1.4.3"
   }
 }

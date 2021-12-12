@@ -92,11 +92,17 @@
   dependencies:
     "@types/node" "*"
 
-"@untemps/svelte-palette@1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.4.2.tgz#3d432fddc1767bb722d69879b628aa7ec5792ccf"
-  integrity sha512-UOe7Va9nTMOCJCXbLa49ZsvABOYKHe/+R3/P/sH3YShLq2YWPzx4xPFEuLb5TqOpS7imWYxnSTjXXS4hxrIjaQ==
+"@untemps/dom-observer@^2.0.0-beta.6":
+  version "2.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@untemps/dom-observer/-/dom-observer-2.0.0-beta.6.tgz#4df3fc75649c431a62e3b611ffac76c59ca711a4"
+  integrity sha512-x20HQAUVTAv+DGVhXYKnfz0AyEG5jskYdbBSE7wz9D6rBlLDwJABgXh9QYoHXDRzPOnxl6z9FAJPU349aXpy4g==
+
+"@untemps/svelte-palette@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.4.3.tgz#c9e46e59cf92cd7e1c3cfd2be755d779552716e3"
+  integrity sha512-HLO9jrD6sh9fPPTmzWa1LtySsjFyNyMhdlR8gjZIohiM/VdsOq08zbZYTukM4DlWU1GphAJxB1fQKqxF1bsGFw==
   dependencies:
+    "@untemps/dom-observer" "^2.0.0-beta.6"
     svelte "3.39.0"
 
 ansi-styles@^3.2.1:
