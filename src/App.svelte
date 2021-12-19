@@ -1,5 +1,6 @@
 <script>
-	import { Palette } from '@untemps/svelte-palette'
+	import {Palette} from '@untemps/svelte-palette'
+
 	const colors = [
 		'#865C54',
 		'#8F5447',
@@ -21,15 +22,88 @@
 		'#F5BAAE',
 		'#F1A191',
 	]
-	let bgColor = colors[0]
-	let selectedColor = null
 
-    const _onColorSelect = ({ detail: { color } }) => bgColor = color
+	let bgColor = colors[0]
+
+	let preselectColor = true
+	let allowDuplicates = true
+	let allowDeletion = true
+	let useCustomTooltipClass = false
+	let useCustomTooltipContent = false
+	let showTransparentSlot = true
+	let maxColors = 20
+	let useCustomClass = false
 </script>
 
 <main style="--bgColor:{bgColor}">
-    <Palette {colors} selectedColor={bgColor} allowDuplicates allowDeletion showTransparentSlot maxColors={30} class='palette' on:select={_onColorSelect} />
+    <div class="container">
+        <Palette
+                {colors}
+                selectedColor={preselectColor ? bgColor : null}
+                {allowDuplicates}
+                {allowDeletion}
+                tooltipClassName={useCustomTooltipClass ? 'tooltip' : null}
+                tooltipContentSelector={useCustomTooltipContent ? '.palette__tooltip__button' : null}
+                {showTransparentSlot}
+                {maxColors}
+                on:select={({ detail: { color } }) => (bgColor = color)}
+                class={useCustomClass ? 'palette' : null}
+        />
+        <form class="settings__form">
+            <h1>Settings</h1>
+            <fieldset>
+                <label>
+                    Preselect color:
+                    <input type="checkbox" bind:checked={preselectColor}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Use Custom Class:
+                    <input type="checkbox" bind:checked={useCustomClass}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Allow Duplicates:
+                    <input type="checkbox" bind:checked={allowDuplicates}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Allow Deletion:
+                    <input type="checkbox" bind:checked={allowDeletion}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Use Custom Tooltip Class:
+                    <input type="checkbox" bind:checked={useCustomTooltipClass}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Use Custom Tooltip Content:
+                    <input type="checkbox" bind:checked={useCustomTooltipContent}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Show Transparent Slot:
+                    <input type="checkbox" bind:checked={showTransparentSlot}/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Max colors:
+                    <input type="number" min="1" max="30" bind:value={maxColors}/>
+                </label>
+            </fieldset>
+        </form>
+    </div>
 </main>
+
+<button class="palette__tooltip__button">Delete</button>
 
 <style>
     main {
@@ -37,7 +111,44 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+        padding: 1rem;
         background-color: var(--bgColor);
+    }
+
+    .container {
+        max-width: 640px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .settings__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: #eee;
+    }
+
+    .settings__form fieldset {
+        width: 100%;
+        border: none;
+    }
+
+    .settings__form label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 1rem;
+    }
+
+    .settings__form input {
+        margin: 0;
+    }
+
+    .settings__form input[type='checkbox'] {
+        padding: 0;
     }
 
     :global(.palette) {
@@ -45,7 +156,29 @@
         flex-direction: column;
         row-gap: 1rem;
         padding: 2rem;
-        background: white;
-        box-shadow: 0 0 10px 5px rgba(0,0,0,0.18);;
+        background: black;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.18);
+    }
+
+    :global(.tooltip) {
+        position: absolute;
+        z-index: 9999;
+        max-width: 120px;
+        background-color: #ee7008;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 0.5rem;
+    }
+
+    :global(.tooltip::after) {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #ee7008 transparent transparent transparent;
     }
 </style>
