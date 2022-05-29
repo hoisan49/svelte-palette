@@ -22,7 +22,9 @@
 		'#F5BAAE',
 		'#F1A191',
 	]
-	let bgColor = colors[0]
+
+	let bgColor = colors[Math.round(Math.random() * (colors.length - 1))]
+
 	let preselectColor = true
 	let allowDuplicates = true
 	let allowDeletion = true
@@ -47,8 +49,8 @@
                 on:select={({ detail: { color } }) => (bgColor = color)}
                 class={useCustomClass ? 'palette' : null}
         />
+        <div class="settings__container">
         <form class="settings__form">
-            <h1>Settings</h1>
             <fieldset>
                 <label>
                     Preselect color:
@@ -82,6 +84,7 @@
             <fieldset>
                 <label>
                     Use Custom Tooltip Content:
+                        <button type="button" class="palette__tooltip__button">Delete</button>
                     <input type="checkbox" bind:checked={useCustomTooltipContent}/>
                 </label>
             </fieldset>
@@ -99,14 +102,12 @@
             </fieldset>
         </form>
     </div>
+    </div>
 </main>
-
-<button class="palette__tooltip__button">Delete</button>
 
 <style>
     main {
         display: flex;
-        align-items: center;
         justify-content: center;
         height: 100%;
         padding: 1rem;
@@ -118,6 +119,10 @@
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
+    }
+
+    .settings__container {
+        overflow: hidden auto;
     }
 
     .settings__form {
@@ -149,6 +154,10 @@
         padding: 0;
     }
 
+    .palette__tooltip__button {
+        margin: 0;
+    }
+
     :global(.palette) {
         display: flex;
         flex-direction: column;
@@ -178,5 +187,11 @@
         border-width: 5px;
         border-style: solid;
         border-color: #ee7008 transparent transparent transparent;
+    }
+
+    @media screen and (max-height: 700px) {
+        .settings__container {
+            max-height: 15rem;
+        }
     }
 </style>
