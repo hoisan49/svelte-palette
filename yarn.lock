@@ -23,6 +23,13 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@babel/runtime@^7.17.8":
+  version "7.18.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
+  integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
@@ -92,18 +99,26 @@
   dependencies:
     "@types/node" "*"
 
-"@untemps/dom-observer@^2.0.0-beta.6":
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@untemps/dom-observer/-/dom-observer-2.0.0-beta.6.tgz#4df3fc75649c431a62e3b611ffac76c59ca711a4"
-  integrity sha512-x20HQAUVTAv+DGVhXYKnfz0AyEG5jskYdbBSE7wz9D6rBlLDwJABgXh9QYoHXDRzPOnxl6z9FAJPU349aXpy4g==
+"@untemps/dom-observer@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@untemps/dom-observer/-/dom-observer-2.0.0.tgz#5b86b091f62905a6f18b0280bbf9067f2949716f"
+  integrity sha512-oZBj7j9hYSbuveNFvyPLamRfNh15KvGJC5pLGGpWVcO61EzISMESL0wudwP0UZETEu+0WfaJ16rGXtEZHsq+xw==
 
-"@untemps/svelte-palette@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.6.0.tgz#952c70b859acfb0f2bba3cd39aff2e3157d28b30"
-  integrity sha512-QdnBEhqm8J8YCCE+5e+u+FG5mXFACopKqyLlCSWs92urZXi4DS9c1eLHzklHGFTfE6FDCg8r8PElFqdEqHxe2Q==
+"@untemps/svelte-palette@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.7.0.tgz#bdf182e474a2762369bd9490e94b68c250a58b0d"
+  integrity sha512-RpIOazPuvh9P6OJQVr2PDNA9hfvIItwQgDcWmXuQmvxiRuaJdDVz1tgPYJsqV/TTXpPTtb5ya9DwjMcv78nGDw==
   dependencies:
-    "@untemps/dom-observer" "^2.0.0-beta.6"
+    "@untemps/dom-observer" "^2.0.0"
+    "@untemps/utils" "^2.0.0"
     svelte "3.39.0"
+
+"@untemps/utils@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@untemps/utils/-/utils-2.0.0.tgz#85a4cc6f819fbf0a4f396d374be5921c75f9d2bf"
+  integrity sha512-yeBxxhPinbl77FE9+cBB0oOzX0/YGp2hd34auWrLwn8CtXb08PX13Xr+yQMZTEWcDu0CMEbWW+wFTd2LmGkSow==
+  dependencies:
+    "@babel/runtime" "^7.17.8"
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -474,6 +489,11 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
+regenerator-runtime@^0.13.4:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
+
 require-relative@^0.8.7:
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
@@ -527,9 +547,9 @@ rollup-pluginutils@^2.8.2:
     estree-walker "^0.6.1"
 
 rollup@^2.3.4:
-  version "2.60.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.60.2.tgz#3f45ace36a9b10b4297181831ea0719922513463"
-  integrity sha512-1Bgjpq61sPjgoZzuiDSGvbI1tD91giZABgjCQBKM5aYLnzjq52GoDuWVwT/cm/MCxCMPU8gqQvkj8doQ5C8Oqw==
+  version "2.75.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.1.tgz#9024223a8000f9ad936b8607c1bc7abcfcbdd1f1"
+  integrity sha512-zD73rq3Fanr/spmiybMqmGEvOpryj/heLqOb+lubxiXlo8azeJ/z306T2dJYuzfWZPQBS0OT++GXG6Lbd4ToKw==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -623,9 +643,9 @@ svelte@3.39.0:
   integrity sha512-dcJCongL0cRkZWe9q+fde0T4HX8PksBywz2+EGDVIrdYdJaxTzrJu0RVeuDtL8Mx2hs4yn3W8zKPScuzG63hTg==
 
 svelte@^3.0.0:
-  version "3.44.2"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.44.2.tgz#3e69be2598308dfc8354ba584cec54e648a50f7f"
-  integrity sha512-jrZhZtmH3ZMweXg1Q15onb8QlWD+a5T5Oca4C1jYvSURp2oD35h4A5TV6t6MEa93K4LlX6BkafZPdQoFjw/ylA==
+  version "3.48.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.48.0.tgz#f98c866d45e155bad8e1e88f15f9c03cd28753d3"
+  integrity sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==
 
 terser@^5.0.0:
   version "5.10.0"
