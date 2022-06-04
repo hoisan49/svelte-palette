@@ -104,10 +104,10 @@
   resolved "https://registry.yarnpkg.com/@untemps/dom-observer/-/dom-observer-2.0.0.tgz#5b86b091f62905a6f18b0280bbf9067f2949716f"
   integrity sha512-oZBj7j9hYSbuveNFvyPLamRfNh15KvGJC5pLGGpWVcO61EzISMESL0wudwP0UZETEu+0WfaJ16rGXtEZHsq+xw==
 
-"@untemps/svelte-palette@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.7.0.tgz#bdf182e474a2762369bd9490e94b68c250a58b0d"
-  integrity sha512-RpIOazPuvh9P6OJQVr2PDNA9hfvIItwQgDcWmXuQmvxiRuaJdDVz1tgPYJsqV/TTXpPTtb5ya9DwjMcv78nGDw==
+"@untemps/svelte-palette@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@untemps/svelte-palette/-/svelte-palette-1.8.0.tgz#b4510e1eb391896d3f10da032a7602324a9ae83b"
+  integrity sha512-NpWa/WGpSyzJ0MvzZC9O0uZdLjw24wYjBv+oVIc4/7EDNDLwPeozGgIsWJY11QnSLteXPIwTJrVSIEVXX+Ycgg==
   dependencies:
     "@untemps/dom-observer" "^2.0.0"
     "@untemps/utils" "^2.0.0"
