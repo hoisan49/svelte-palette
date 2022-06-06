@@ -55,16 +55,16 @@
 		background: none;
 		border: none;
 		color: white;
-        cursor: pointer;
-        width: 36px;
+		cursor: pointer;
+		width: 36px;
 	}
 
 	.container {
 		position: relative;
 		max-width: 640px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 	}
 
 	.settings__container {
@@ -73,9 +73,9 @@
 		z-index: 9999;
 		width: 100vw;
 		max-width: 320px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 	}
 
 	.settings__form {
@@ -84,8 +84,8 @@
 		justify-content: center;
 		align-items: center;
 		padding: 1rem;
-		background-color: rgba(255, 255, 255, .98);
-        border-radius: 1rem;
+		background-color: #fafafa;
+		border-radius: 1rem;
 	}
 
 	.settings__form fieldset {
@@ -154,8 +154,8 @@
 	{#if showSettings}
 		<div class="settings__container">
 			<button type="button" class="toggle__button" on:click={() => (showSettings = !showSettings)}>
-                <CloseIcon />
-            </button>
+				<CloseIcon color={!bgColor ? '#ccc' : '#fff'} />
+			</button>
 			<form class="settings__form">
 				<fieldset>
 					<label>
@@ -221,8 +221,8 @@
 
 	<div class="container">
 		<button type="button" class="toggle__button" on:click={() => (showSettings = !showSettings)}>
-            <SettingsIcon />
-        </button>
+			<SettingsIcon color={!bgColor ? '#ccc' : '#fff'} />
+		</button>
 		<Palette
 			colors={colors}
 			selectedColor={preselectColor ? bgColor : null}
@@ -233,7 +233,10 @@
 			showTransparentSlot={showTransparentSlot}
 			maxColors={maxColors}
 			inputType={inputType}
-			on:select={({ detail: { color } }) => (bgColor = color)}
+			on:select={({ detail: { color } }) => {
+				bgColor = color
+				preselectColor = !!bgColor
+			}}
 			class={useCustomClass ? 'palette' : null} />
 	</div>
 </main>
