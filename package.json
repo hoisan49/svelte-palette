@@ -16,7 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "@untemps/svelte-palette": "^1.8.2",
+    "@untemps/svelte-palette": "1.9.1-beta.3",
     "sirv-cli": "^1.0.0"
   },
   "scripts": {
